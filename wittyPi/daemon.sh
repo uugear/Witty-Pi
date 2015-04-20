@@ -18,6 +18,9 @@ byte_F=$(i2cget -y 0x01 0x68 0x0F)
 byte_F=$(($byte_F&0xFC))
 i2cset -y 0x01 0x68 0x0F $byte_F
 
+# delay for seconds to let GPIO pin state gets stable
+sleep 5
+
 # wait for GPIO-4 (wiringPi pin 7) falling, or alarm B
 gpio wfi 7 falling
 
