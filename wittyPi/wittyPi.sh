@@ -31,9 +31,9 @@ set_auto_startup()
   if [[ $when =~ ^[0-3][0-9][[:space:]][0-2][0-9]:[0-5][0-9]:[0-5][0-9]$ ]]; then
     IFS=' ' read -r date timestr <<< "$when"
     IFS=':' read -r hour minute second <<< "$timestr"
-    if [ $(($date>31)) == "1" ] || [ $(($date<1)) == "1" ]; then
+    if [ $((10#$date>31)) == "1" ] || [ $((10#$date<1)) == "1" ]; then
       echo "  Day value should be 01~31."
-    elif [ $(($hour>23)) == "1" ]; then
+    elif [ $((10#$hour>23)) == "1" ]; then
       echo "  Hour value should be 00~23."
     else
       msg="  Seting startup time to \""
@@ -64,9 +64,9 @@ set_auto_shutdown()
   if [[ $when =~ ^[0-3][0-9][[:space:]][0-2][0-9]:[0-5][0-9]$ ]]; then
     IFS=' ' read -r date timestr <<< "$when"
     IFS=':' read -r hour minute <<< "$timestr"
-    if [ $(($date>31)) == "1" ] || [ $(($date<1)) == "1" ]; then
+    if [ $((10#$date>31)) == "1" ] || [ $((10#$date<1)) == "1" ]; then
       echo "  Day value should be 01~31."
-    elif [ $(($hour>23)) == "1" ]; then
+    elif [ $((10#$hour>23)) == "1" ]; then
       echo "  Hour value should be 00~23."
     else
       msg="  Seting shutdown time to \""
