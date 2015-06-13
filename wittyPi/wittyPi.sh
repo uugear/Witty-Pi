@@ -76,9 +76,9 @@ set_auto_shutdown()
   local off_time=$(get_local_date_time "$(get_shutdown_time)")
   local size=${#off_time}
   if [ $size == '3' ]; then
-    echo  "  Auto shudown time is not set yet."
+    echo  "  Auto shutdown time is not set yet."
   else
-    echo -e "  Auto shudown time is currently set to \"$off_time\b\b\b\"  ";
+    echo -e "  Auto shutdown time is currently set to \"$off_time\b\b\b\"  ";
   fi
   read -p "  When do you want your Raspberry Pi to auto shutdown? (dd HH:MM, ?? as wildcard) " when
   if [[ $when =~ ^[0-3\?][0-9\?][[:space:]][0-2\?][0-9\?]:[0-5\?][0-9\?]$ ]]; then
