@@ -14,7 +14,7 @@ echo '==========================================================================
 echo '|                                                                              |'
 echo '|   Witty Pi - Realtime Clock + Power Management for Raspberry A+, B+ and 2    |'
 echo '|                                                                              |'
-echo '|                   < Version 1.01 >     by UUGear s.r.o.                      |'
+echo '|                   < Version 1.50 >     by UUGear s.r.o.                      |'
 echo '|                                                                              |'
 echo '================================================================================'
 
@@ -24,21 +24,43 @@ echo '==========================================================================
 # interactive actions
 set_auto_startup()
 {
-  msg="  Current auto startup time is set to \"";
-  msg+=$(get_local_date_time "$(get_startup_time)")
-  echo "$msg\""
-  read -p "  When do you want your Raspberry Pi to auto start up? (dd HH:MM:SS) " when
-  if [[ $when =~ ^[0-3][0-9][[:space:]][0-2][0-9]:[0-5][0-9]:[0-5][0-9]$ ]]; then
+  local startup_time=$(get_local_date_time "$(get_startup_time)")
+  local size=${#startup_time}
+  if [ $size == '3' ]; then
+    echo "  Auto startup time is not set yet.";
+  else
+    echo "  Auto startup time is currently set to \"$startup_time\"";
+  fi
+  read -p "  When do you want your Raspberry Pi to auto startup? (dd HH:MM:SS, ?? as wildcard) " when
+  if [[ $when =~ ^[0-3\?][0-9\?][[:space:]][0-2\?][0-9\?]:[0-5\?][0-9\?]:[0-5\?][0-9\?]$ ]]; then
     IFS=' ' read -r date timestr <<< "$when"
     IFS=':' read -r hour minute second <<< "$timestr"
-    if [ $((10#$date>31)) == "1" ] || [ $((10#$date<1)) == "1" ]; then
+    wildcard='??'
+    if [ $date != $wildcard ] && ([ $((10#$date>31)) == '1' ] || [ $((10#$date<1)) == '1' ]); then
       echo "  Day value should be 01~31."
-    elif [ $((10#$hour>23)) == "1" ]; then
+    elif [ $hour != $wildcard ] && [ $((10#$hour>23)) == '1' ]; then
       echo "  Hour value should be 00~23."
     else
-      msg="  Seting startup time to \""
-      echo "$msg$when\""
-      when=$(get_utc_date_time "$when")
+      local updated='0'
+      if [ $hour == '??' ] && [ $date != '??' ]; then
+        date='??'
+        updated='1'
+      fi
+      if [ $minute == '??' ] && ([ $hour != '??' ] || [ $date != '??' ]); then
+        hour='??'
+        date='??'
+        updated='1'
+      fi
+      if [ $second == '??' ]; then
+        second='00'
+        updated='1'
+      fi
+      if [ $updated == '1' ]; then
+        when="$date $hour:$minute:$second"
+        echo "  ...not supported pattern, but I can do \"$when\" for you..."
+      fi
+      echo "  Seting startup time to \"$when\""
+      when=$(get_utc_date_time $date $hour $minute $second)
       IFS=' ' read -r date timestr <<< "$when"
       IFS=':' read -r hour minute second <<< "$timestr"
       set_startup_time $date $hour $minute $second
@@ -51,27 +73,39 @@ set_auto_startup()
 
 set_auto_shutdown()
 {
-  msg="  Current auto shutdown time is set to \"";
-  off_time=$(get_local_date_time "$(get_shutdown_time)")
-  size=${#off_time}
-  msg+=$off_time
-  if [ $size == "0" ]; then
-    echo  "$msg\""
+  local off_time=$(get_local_date_time "$(get_shutdown_time)")
+  local size=${#off_time}
+  if [ $size == '3' ]; then
+    echo  "  Auto shudown time is not set yet."
   else
-    echo -e "$msg\b\b\b\"  "
+    echo -e "  Auto shudown time is currently set to \"$off_time\b\b\b\"  ";
   fi
-  read -p "  When do you want your Raspberry Pi to auto shutdown? (dd HH:MM) " when
-  if [[ $when =~ ^[0-3][0-9][[:space:]][0-2][0-9]:[0-5][0-9]$ ]]; then
+  read -p "  When do you want your Raspberry Pi to auto shutdown? (dd HH:MM, ?? as wildcard) " when
+  if [[ $when =~ ^[0-3\?][0-9\?][[:space:]][0-2\?][0-9\?]:[0-5\?][0-9\?]$ ]]; then
     IFS=' ' read -r date timestr <<< "$when"
     IFS=':' read -r hour minute <<< "$timestr"
-    if [ $((10#$date>31)) == "1" ] || [ $((10#$date<1)) == "1" ]; then
+    wildcard='??'
+    if [ $date != $wildcard ] && ([ $((10#$date>31)) == '1' ] || [ $((10#$date<1)) == '1' ]); then
       echo "  Day value should be 01~31."
-    elif [ $((10#$hour>23)) == "1" ]; then
+    elif [ $hour != $wildcard ] && [ $((10#$hour>23)) == '1' ]; then
       echo "  Hour value should be 00~23."
     else
-      msg="  Seting shutdown time to \""
-      echo "$msg$when\""
-      when=$(get_utc_date_time "$when")
+      local updated='0'
+      if [ $hour == '??' ] && [ $date != '??' ]; then
+        date='??'
+        updated='1'
+      fi
+      if [ $minute == '??' ] && ([ $hour != '??' ] || [ $date != '??' ]); then
+        hour='??'
+        date='??'
+        updated='1'
+      fi
+      if [ $updated == '1' ]; then
+        when="$date $hour:$minute"
+        echo "  ...not supported pattern, but I can do \"$when\" for you..."
+      fi
+      echo "  Seting shutdown time to \"$when\""
+      when=$(get_utc_date_time $date $hour $minute '00')
       IFS=' ' read -r date timestr <<< "$when"
       IFS=':' read -r hour minute second <<< "$timestr"
       set_shutdown_time $date $hour $minute
