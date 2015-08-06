@@ -222,3 +222,14 @@ rtc_to_system()
   unload_rtc
   echo "  Done :-)"
 }
+
+trim()
+{
+  local result=$(echo "$1" | sed -n '1h;1!H;${;g;s/^[ \t]*//g;s/[ \t]*$//g;p;}')
+  echo $result
+}
+
+current_timestamp()
+{
+  echo $(date +%s)
+}

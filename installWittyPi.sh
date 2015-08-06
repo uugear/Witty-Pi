@@ -76,6 +76,7 @@ else
   chmod +x wittyPi.sh
   chmod +x daemon.sh
   chmod +x syncTime.sh
+  chmod +x runScript.sh
   cp init.sh /etc/init.d/wittypi
   chmod +x /etc/init.d/wittypi
   update-rc.d wittypi defaults

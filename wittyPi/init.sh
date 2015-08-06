@@ -18,6 +18,7 @@ case "$1" in
 	sleep 1
 	daemonPid=$(ps --ppid $! -o pid=)
 	echo $daemonPid > /var/run/wittypi_daemon.pid
+	sudo /home/pi/wittyPi/runScript.sh >> /home/pi/wittyPi/schedule.log &
 	sudo /home/pi/wittyPi/syncTime.sh 60 &
         ;;
     stop)

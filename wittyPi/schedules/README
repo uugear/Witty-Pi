@@ -1,0 +1,30 @@
+===============================================================================
+How to use these .wpi files?
+===============================================================================
+  The .wpi files in this directory are Witty Pi schedule script examples. When 
+you run wittyPi.sh, you can choose a schedule script there. The schedule 
+script file you selected will be copied to the Witty Pi install directory 
+(~/wittyPi), and the next shutdown and startup will be scheduled automatically 
+for you.
+
+  You can also manually copy the schedule script to "~/wittyPi/schedule.wpi" 
+and then run "sudo ./runScript" to get the same result.
+
+===============================================================================
+How to create your own .wpi file?
+===============================================================================
+  You can use any text editor to create/edit your own .wpi file. Then you can 
+use it like other .wpi files in this directory.
+
+  The content of .wpi file defines a loop, which specifies each ON/OFF state 
+and its duration. Your Raspberry Pi will automatically run the runScript.sh 
+after booting, which will schedule the next shutdown and startup, according to 
+the script content. As long as the current time is between the BEGIN and END 
+time of the script, the loop will continue.
+
+  Please take other .wpi files as examples. You will need to define the BEGIN 
+and END time of the loop, and each ON/OFF state in the loop. The duration of 
+the state is define by putting D?, H?, M? and S? parameter after the state 
+type (ON/OFF), while D as Days, H as Hours, M as Minutes, S as Seconds and ? 
+is a number. For example, "D1 H2 M3 S10" means 1 day 2 hours 3 minutes and 10 
+seconds, while "H5 M2" means 5 hours and 2 minutes.
