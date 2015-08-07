@@ -25,7 +25,7 @@ schedule_file="$cur_dir/schedule.wpi"
 
 # get current timestamp
 cur_time=$(current_timestamp)
-echo "---------- $(date) ----------"
+echo "--------------- $(date -d @$cur_time +'%Y-%m-%d %H:%M:%S') ---------------"
 
 extract_timestamp()
 {

@@ -18,7 +18,8 @@ unload_rtc()
 get_rtc_time()
 {
   load_rtc
-  local rtctime+="$(hwclock -r)"
+  LANG=en_GB.UTF-8
+  local rtctime=$(hwclock | awk '{$7=$8="";print $0}');
   unload_rtc
   echo $rtctime
 }
@@ -231,5 +232,14 @@ trim()
 
 current_timestamp()
 {
-  echo $(date +%s)
+  load_rtc
+  unset LANG
+  local rtctime=$(hwclock | awk '{$6=$7="";print $0}');
+  unload_rtc
+  local rtctimestamp=$(date -d "$rtctime" +%s)
+  if [ "$rtctimestamp" == "" ] ; then
+    echo $(date +%s)
+  else
+    echo $rtctimestamp
+  fi
 }
