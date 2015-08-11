@@ -11,6 +11,7 @@ if [ "$(id -u)" != 0 ]; then
   exit 1
 fi
 
+# target directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/wittyPi"
 
 echo '================================================================================'
