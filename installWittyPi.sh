@@ -11,6 +11,8 @@ if [ "$(id -u)" != 0 ]; then
   exit 1
 fi
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/wittyPi"
+
 echo '================================================================================'
 echo '|                                                                              |'
 echo '|                   Witty Pi Software Installing Script                        |'
@@ -77,7 +79,7 @@ else
   chmod +x daemon.sh
   chmod +x syncTime.sh
   chmod +x runScript.sh
-  cp init.sh /etc/init.d/wittypi
+  sed  -e "s#/home/pi/wittyPi#$DIR#g" init.sh >/etc/init.d/wittypi
   chmod +x /etc/init.d/wittypi
   update-rc.d wittypi defaults
   cd ..
