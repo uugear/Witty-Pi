@@ -14,7 +14,7 @@ echo '==========================================================================
 echo '|                                                                              |'
 echo '|   Witty Pi - Realtime Clock + Power Management for Raspberry A+, B+ and 2    |'
 echo '|                                                                              |'
-echo '|                   < Version 2.01 >     by UUGear s.r.o.                      |'
+echo '|                   < Version 2.02 >     by UUGear s.r.o.                      |'
 echo '|                                                                              |'
 echo '================================================================================'
 
@@ -135,10 +135,58 @@ choose_schedule_script()
     echo '  Done :-)'
     echo '  Please try not to shutdown your Pi manually, and let me do it for you.'
     echo '  Or at least remember to turn it ON before next scheduled shutdown.'
-    echo '  To terminate the script, just remove the "schedule.wpi" file and restart your Pi.'
   else
     echo "  \"$index\" is not a good choice, I need a number from 1 to $count"
   fi
+}
+
+reset_startup_time()
+{
+    echo -n '  Clearing auto startup time...'
+    clear_startup_time
+    echo ' done :-)'
+}
+
+reset_shutdown_time()
+{
+    echo -n '  Clearing auto shutdown time...'
+    clear_shutdown_time
+    echo ' done :-)'
+}
+
+delete_schedule_script()
+{
+    echo -n '  Deleting "schedule.wpi" file...'
+    if [ -f "schedule.wpi" ]; then
+      rm schedule.wpi
+      echo ' done :-)'
+    else
+      echo ' file does not exist'
+    fi
+}
+
+reset_all()
+{
+    reset_startup_time
+    reset_shutdown_time
+    delete_schedule_script
+}
+
+reset_data()
+{
+    echo 'Here you can reset some data:'
+    echo '  [1] Clear auto startup time'
+    echo '  [2] Clear auto shutdown time'
+    echo '  [3] Stop using schedule script'
+    echo '  [4] Perform all actions above'
+    read -p "Which action to perform? (1~4) " action
+    case $action in
+        [1]* ) reset_startup_time;;
+        [2]* ) reset_shutdown_time;;
+        [3]* ) delete_schedule_script;;
+        [4]* ) reset_all;;
+        * ) echo 'Please choose from 1 to 4';;
+    esac
 }
 
 # ask user for action
@@ -154,22 +202,24 @@ while true; do
     echo "$rtctime"
 
     # let user choose action
-    echo "Now you can:"
-    echo "  1. Write system time to RTC"
-    echo "  2. Write RTC time to system"
-    echo "  3. Set time for auto startup"
-    echo "  4. Set time for auto shutdown"
-    echo "  5. Choose schedule script"
-    echo "  6. Exit"
-    read -p "What do you want to do? (1~6) " action
+    echo 'Now you can:'
+    echo '  1. Write system time to RTC'
+    echo '  2. Write RTC time to system'
+    echo '  3. Set time for auto startup'
+    echo '  4. Set time for auto shutdown'
+    echo '  5. Choose schedule script'
+    echo '  6. Reset data...'
+    echo '  7. Exit'
+    read -p 'What do you want to do? (1~7) ' action
     case $action in
         [1]* ) system_to_rtc;;
         [2]* ) rtc_to_system;;
         [3]* ) set_auto_startup;;
         [4]* ) set_auto_shutdown;;
         [5]* ) choose_schedule_script;;
-        [6]* ) exit;;
-        * ) echo "Please choose from 1 to 6";;
+        [6]* ) reset_data;;
+        [7]* ) exit;;
+        * ) echo 'Please choose from 1 to 7';;
     esac
     read -rsp $'(Press any key to continue...)\n' -n 1 key
     echo ''
