@@ -64,7 +64,7 @@ extract_duration()
 
 setup_off_state()
 {
-  echo "Schedule next startup at:  $(date -d @$1 +'%Y-%m-%d %H:%M:%S')"
+  log "Schedule next startup at:  $(date -d @$1 +'%Y-%m-%d %H:%M:%S')"
   local date=$(date -d "@$1" +"%d")
   local hour=$(date -d "@$1" +"%H")
   local minute=$(date -d "@$1" +"%M")
@@ -77,7 +77,7 @@ setup_off_state()
 
 setup_on_state()
 {
-  echo "Schedule next shutdown at: $(date -d @$1 +'%Y-%m-%d %H:%M:00')"
+  log "Schedule next shutdown at: $(date -d @$1 +'%Y-%m-%d %H:%M:00')"
   local date=$(date -d "@$1" +"%d")
   local hour=$(date -d "@$1" +"%H")
   local minute=$(date -d "@$1" +"%M")

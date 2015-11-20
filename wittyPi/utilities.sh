@@ -223,20 +223,20 @@ clear_shutdown_time()
 
 system_to_rtc()
 {
-  echo "  Writing system time to RTC..."
+  log '  Writing system time to RTC...'
   load_rtc
   hwclock -w
   unload_rtc
-  echo "  Done :-)"
+  log '  Done :-)'
 }
 
 rtc_to_system()
 {
-  echo "  Writing RTC time to system..."
+  log '  Writing RTC time to system...'
   load_rtc
   hwclock -s
   unload_rtc
-  echo "  Done :-)"
+  log '  Done :-)'
 }
 
 trim()
@@ -257,4 +257,18 @@ current_timestamp()
   else
     echo $rtctimestamp
   fi
+}
+
+wittypi_home="`dirname \"$0\"`"
+wittypi_home="`( cd \"$wittypi_home\" && pwd )`"
+log( )
+{
+  local datetime=$(date +'[%Y-%m-%d %H:%M:%S]')
+  local msg="$datetime $1"
+  if [ $# -gt 1 ] ; then
+    echo $2 "$1"
+  else
+    echo "$1"
+  fi
+  echo $msg >> $wittypi_home/wittyPi.log
 }

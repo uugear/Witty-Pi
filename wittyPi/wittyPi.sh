@@ -64,12 +64,12 @@ set_auto_startup()
         when="$date $hour:$minute:$second"
         echo "  ...not supported pattern, but I can do \"$when\" for you..."
       fi
-      echo "  Seting startup time to \"$when\""
+      log "  Seting startup time to \"$when\""
       when=$(get_utc_date_time $date $hour $minute $second)
       IFS=' ' read -r date timestr <<< "$when"
       IFS=':' read -r hour minute second <<< "$timestr"
       set_startup_time $date $hour $minute $second
-      echo '  Done :-)'
+      log '  Done :-)'
     fi
   else
     echo "  Sorry I don't recognize your input :-("
@@ -109,12 +109,12 @@ set_auto_shutdown()
         when="$date $hour:$minute"
         echo "  ...not supported pattern, but I can do \"$when\" for you..."
       fi
-      echo "  Seting shutdown time to \"$when\""
+      log "  Seting shutdown time to \"$when\""
       when=$(get_utc_date_time $date $hour $minute '00')
       IFS=' ' read -r date timestr <<< "$when"
       IFS=':' read -r hour minute second <<< "$timestr"
       set_shutdown_time $date $hour $minute
-      echo '  Done :-)'
+      log '  Done :-)'
     fi
   else
     echo "  Sorry I don't recognize your input :-("
@@ -133,11 +133,11 @@ choose_schedule_script()
   read -p "  Which schedule script do you want to use? (1~$count) " index
   if [[ $index =~ [0-9]+ ]] && [ $(($index >= 1)) == '1' ] && [ $(($index <= $count)) == '1' ] ; then
     local script=${files[$((index-1))]};
-    echo "  Copying \"${script:10}\" to \"schedule.wpi\"..."
+    log "  Copying \"${script:10}\" to \"schedule.wpi\"..."
     cp ${script} schedule.wpi
-    echo '  Running the script...'
+    log '  Running the script...'
     . runScript.sh
-    echo '  Done :-)'
+    log '  Done :-)'
     echo '  Please try not to shutdown your Pi manually, and let me do it for you.'
     echo '  Or at least remember to turn it ON before next scheduled shutdown.'
   else
@@ -147,26 +147,26 @@ choose_schedule_script()
 
 reset_startup_time()
 {
-    echo -n '  Clearing auto startup time...'
+    log '  Clearing auto startup time...' '-n'
     clear_startup_time
-    echo ' done :-)'
+    log ' done :-)'
 }
 
 reset_shutdown_time()
 {
-    echo -n '  Clearing auto shutdown time...'
+    log '  Clearing auto shutdown time...' '-n'
     clear_shutdown_time
-    echo ' done :-)'
+    log ' done :-)'
 }
 
 delete_schedule_script()
 {
-    echo -n '  Deleting "schedule.wpi" file...'
-    if [ -f "schedule.wpi" ]; then
-      rm schedule.wpi
-      echo ' done :-)'
+    log '  Deleting "schedule.wpi" file...' '-n'
+    if [ -f "$my_dir/schedule.wpi" ]; then
+      rm "$my_dir/schedule.wpi"
+      log ' done :-)'
     else
-      echo ' file does not exist'
+      log ' file does not exist'
     fi
 }
 
