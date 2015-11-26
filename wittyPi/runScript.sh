@@ -108,16 +108,16 @@ if [ -f $schedule_file ]; then
   done < $schedule_file
 
   if [ $begin == 0 ] ; then
-    echo 'I can not find the begin time in the script...'
+    log 'I can not find the begin time in the script...'
   elif [ $end == 0 ] ; then
-    echo 'I can not find the end time in the script...'
+    log 'I can not find the end time in the script...'
   elif [ $count == 0 ] ; then
-    echo 'I can not find any state defined in the script.'
+    log 'I can not find any state defined in the script.'
   else
     if [ $((cur_time < begin)) == '1' ] ; then
-      echo 'The schedule script has not beginned yet.'
+      log 'The schedule script has not beginned yet.'
     elif [ $((cur_time >= end)) == '1' ] ; then
-      echo 'The schedule script has ended already.'
+      log 'The schedule script has ended already.'
     else
       index=0
       found_states=0
@@ -143,7 +143,7 @@ if [ -f $schedule_file ]; then
           elif [[ ${states[$index]} == OFF* ]] ; then
             setup_off_state $check_time
           else
-            echo "I can not recognize this state: ${states[$index]}"
+            log "I can not recognize this state: ${states[$index]}"
           fi
         fi
         index=$((index+1))
@@ -151,10 +151,10 @@ if [ -f $schedule_file ]; then
           index=0
           if [ $script_duration == 0 ] ; then
             if [ $found_off == 0 ] ; then
-              echo 'I need at least one OFF state in the script.'
+              log 'I need at least one OFF state in the script.'
               check_time=$end     # skip all remaining cycles
             elif [ $found_on == 0 ] ; then
-              echo 'I need at least one ON state in the script.'
+              log 'I need at least one ON state in the script.'
               check_time=$end     # skip all remaining cycles
             else
               script_duration=$((check_time-begin))
@@ -168,7 +168,7 @@ if [ -f $schedule_file ]; then
     fi
   fi
 else
-  echo 'I can not find the schedule file, so I skip it.'
+  log "File \"schedule.wpi\" not found, skip running schedule script."
 fi
 
 echo '---------------------------------------------------'

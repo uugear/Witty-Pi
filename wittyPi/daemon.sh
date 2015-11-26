@@ -10,37 +10,61 @@ if [ "$(id -u)" != 0 ]; then
   exit 1
 fi
 
+# get current directory
+cur_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+
+# utilities
+. "$cur_dir/utilities.sh"
+
+log 'Witty Pi daemon is started.'
+
+# halt by GPIO-4 (wiringPi pin 7)
+halt_pin=7
+
+# LED on GPIO-17 (wiringPi pin 0)
+led_pin=0
+
 # disable square wave and enable alarm B
-i2cset -y 0x01 0x68 0x0E 0x07
+i2c_write 0x01 0x68 0x0E 0x07
 
 # clear alarm flags
-byte_F=$(i2cget -y 0x01 0x68 0x0F)
+byte_F=$(i2c_read 0x01 0x68 0x0F)
 byte_F=$(($byte_F&0xFC))
-i2cset -y 0x01 0x68 0x0F $byte_F
+i2c_write 0x01 0x68 0x0F $byte_F
 
-# delay for seconds to let GPIO pin state gets stable
-sleep 5
+# delay until GPIO pin state gets stable
+counter=0
+while [ $counter -lt 5 ]; do
+  if [ $(gpio read $halt_pin) == '1' ] ; then
+    counter=$(($counter+1))
+  else
+    counter=0
+  fi
+  sleep 1
+done
 
 # wait for GPIO-4 (wiringPi pin 7) falling, or alarm B
-gpio wfi 7 falling
-
-echo "Halting all processes and then shutdown Raspberry Pi..."
+log 'Pending for incoming shutdown command...'
+gpio wfi $halt_pin falling
+log 'Shutdown command is received...'
 
 # restore GPIO-4
-gpio mode 7 in
-gpio mode 7 up
+gpio mode $halt_pin in
+gpio mode $halt_pin up
 
 # clear alarm flags
-byte_F=$(i2cget -y 0x01 0x68 0x0F)
+byte_F=$(i2c_read 0x01 0x68 0x0F)
 byte_F=$(($byte_F&0xFC))
-i2cset -y 0x01 0x68 0x0F $byte_F
+i2c_write 0x01 0x68 0x0F $byte_F
 
 # only enable alarm A
-i2cset -y 0x01 0x68 0x0E 0x05
+i2c_write 0x01 0x68 0x0E 0x05
 
 # light the white LED
-gpio mode 0 out
-gpio write 0 1
+gpio mode $led_pin out
+gpio write $led_pin 1
+
+log 'Halting all processes and then shutdown Raspberry Pi...'
 
 # halt everything and shutdown
 shutdown -h now

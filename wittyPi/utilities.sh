@@ -36,6 +36,11 @@ dec2bcd()
   echo $result
 }
 
+dec2hex()
+{
+  printf "0x%02x" $1
+}
+
 get_utc_date_time()
 {
   local date=$1
@@ -118,19 +123,19 @@ get_local_date_time()
 
 get_startup_time()
 {
-  sec=$(bcd2dec $(i2cget -y 0x01 0x68 0x07))
+  sec=$(bcd2dec $(i2c_read 0x01 0x68 0x07))
   if [ $sec == '128' ]; then
     sec='??'
   fi
-  min=$(bcd2dec $(i2cget -y 0x01 0x68 0x08))
+  min=$(bcd2dec $(i2c_read 0x01 0x68 0x08))
   if [ $min == '128' ]; then
     min='??'
   fi
-  hour=$(bcd2dec $(i2cget -y 0x01 0x68 0x09))
+  hour=$(bcd2dec $(i2c_read 0x01 0x68 0x09))
   if [ $hour == '128' ]; then
     hour='??'
   fi
-  date=$(bcd2dec $(i2cget -y 0x01 0x68 0x0A))
+  date=$(bcd2dec $(i2c_read 0x01 0x68 0x0A))
   if [ $date == '128' ]; then
     date='??'
   fi
@@ -139,52 +144,52 @@ get_startup_time()
 
 set_startup_time()
 {
-  i2cset -y 0x01 0x68 0x0E 0x07
+  i2c_write 0x01 0x68 0x0E 0x07
   if [ $4 == '??' ]; then
     sec=$(dec2bcd '128')
   else
     sec=$(dec2bcd $4)
   fi
-  i2cset -y 0x01 0x68 0x07 $sec
+  i2c_write 0x01 0x68 0x07 $sec
   if [ $3 == '??' ]; then
     min=$(dec2bcd '128')
   else
     min=$(dec2bcd $3)
   fi
-  i2cset -y 0x01 0x68 0x08 $min
+  i2c_write 0x01 0x68 0x08 $min
   if [ $2 == '??' ]; then
     hour=$(dec2bcd '128')
   else
     hour=$(dec2bcd $2)
   fi
-  i2cset -y 0x01 0x68 0x09 $hour
+  i2c_write 0x01 0x68 0x09 $hour
   if [ $1 == '??' ]; then
     date=$(dec2bcd '128')
   else
     date=$(dec2bcd $1)
   fi
-  i2cset -y 0x01 0x68 0x0A $date
+  i2c_write 0x01 0x68 0x0A $date
 }
 
 clear_startup_time()
 {
-  i2cset -y 0x01 0x68 0x07 0x00
-  i2cset -y 0x01 0x68 0x08 0x00
-  i2cset -y 0x01 0x68 0x09 0x00
-  i2cset -y 0x01 0x68 0x0A 0x00
+  i2c_write 0x01 0x68 0x07 0x00
+  i2c_write 0x01 0x68 0x08 0x00
+  i2c_write 0x01 0x68 0x09 0x00
+  i2c_write 0x01 0x68 0x0A 0x00
 }
 
 get_shutdown_time()
 {
-  min=$(bcd2dec $(i2cget -y 0x01 0x68 0x0B))
+  min=$(bcd2dec $(i2c_read 0x01 0x68 0x0B))
   if [ $min == '128' ]; then
     min='??'
   fi
-  hour=$(bcd2dec $(i2cget -y 0x01 0x68 0x0C))
+  hour=$(bcd2dec $(i2c_read 0x01 0x68 0x0C))
   if [ $hour == '128' ]; then
     hour='??'
   fi
-  date=$(bcd2dec $(i2cget -y 0x01 0x68 0x0D))
+  date=$(bcd2dec $(i2c_read 0x01 0x68 0x0D))
   if [ $date == '128' ]; then
     date='??'
   fi
@@ -193,50 +198,60 @@ get_shutdown_time()
 
 set_shutdown_time()
 {
-  i2cset -y 0x01 0x68 0x0E 0x07
+  i2c_write 0x01 0x68 0x0E 0x07
   if [ $3 == '??' ]; then
     min=$(dec2bcd '128')
   else
     min=$(dec2bcd $3)
   fi
-  i2cset -y 0x01 0x68 0x0B $min
+  i2c_write 0x01 0x68 0x0B $min
   if [ $2 == '??' ]; then
     hour=$(dec2bcd '128')
   else
     hour=$(dec2bcd $2)
   fi
-  i2cset -y 0x01 0x68 0x0C $hour
+  i2c_write 0x01 0x68 0x0C $hour
   if [ $1 == '??' ]; then
     date=$(dec2bcd '128')
   else
     date=$(dec2bcd $1)
   fi
-  i2cset -y 0x01 0x68 0x0D $date
+  i2c_write 0x01 0x68 0x0D $date
 }
 
 clear_shutdown_time()
 {
-  i2cset -y 0x01 0x68 0x0B 0x00
-  i2cset -y 0x01 0x68 0x0C 0x00
-  i2cset -y 0x01 0x68 0x0D 0x00
+  i2c_write 0x01 0x68 0x0B 0x00
+  i2c_write 0x01 0x68 0x0C 0x00
+  i2c_write 0x01 0x68 0x0D 0x00
 }
 
 system_to_rtc()
 {
   log '  Writing system time to RTC...'
   load_rtc
-  hwclock -w
+  local err=$((hwclock -w) 2>&1)
+  if [ "$err" == "" ] ; then
+    log '  Done :-)'
+  else
+    log '  Failed :-('
+    log "$err"
+  fi
   unload_rtc
-  log '  Done :-)'
 }
 
 rtc_to_system()
 {
   log '  Writing RTC time to system...'
   load_rtc
-  hwclock -s
+  local err=$((hwclock -s) 2>&1)
+  if [ "$err" == "" ] ; then
+    log '  Done :-)'
+  else
+    log '  Failed :-('
+    log "$err"
+  fi
   unload_rtc
-  log '  Done :-)'
 }
 
 trim()
@@ -261,14 +276,60 @@ current_timestamp()
 
 wittypi_home="`dirname \"$0\"`"
 wittypi_home="`( cd \"$wittypi_home\" && pwd )`"
-log( )
+log2file()
 {
   local datetime=$(date +'[%Y-%m-%d %H:%M:%S]')
   local msg="$datetime $1"
+  echo $msg >> $wittypi_home/wittyPi.log
+}
+
+log()
+{
   if [ $# -gt 1 ] ; then
     echo $2 "$1"
   else
     echo "$1"
   fi
-  echo $msg >> $wittypi_home/wittyPi.log
+  log2file "$1"
+}
+
+i2c_read()
+{
+  local retry=0
+  if [ $# -gt 3 ] ; then
+    retry=$4
+  fi
+  local result=$(i2cget -y $1 $2 $3)
+  if [[ $result =~ ^0x[0-9A-F]{2}$ ]] ; then
+    echo $result;
+  else
+    retry=$(( $retry + 1 ))
+    if [ $retry -eq 4 ] ; then
+      log "I2C read $1 $2 $3 failed, and no more retry."
+    else
+      sleep 1
+      log2file "I2C read $1 $2 $3 failed, retrying $retry ..."
+      i2c_read $1 $2 $3 $retry
+    fi
+  fi
+}
+
+i2c_write()
+{
+  local retry=0
+  if [ $# -gt 4 ] ; then
+    retry=$5
+  fi
+  i2cset -y $1 $2 $3 $4
+  local result=$(i2c_read $1 $2 $3)
+  if [ "$result" != $(dec2hex "$4") ] ; then
+    retry=$(( $retry + 1 ))
+    if [ $retry -eq 4 ] ; then
+      log "I2C write $1 $2 $3 $4 failed, and no more retry."
+    else
+      sleep 1
+      log2file "I2C write $1 $2 $3 $4 failed, retrying $retry ..."
+      i2c_write $1 $2 $3 $4 $retry
+    fi
+  fi
 }
