@@ -14,7 +14,7 @@ echo '==========================================================================
 echo '|                                                                              |'
 echo '|   Witty Pi - Realtime Clock + Power Management for Raspberry A+, B+ and 2    |'
 echo '|                                                                              |'
-echo '|                   < Version 2.10 >     by UUGear s.r.o.                      |'
+echo '|                   < Version 2.11 >     by UUGear s.r.o.                      |'
 echo '|                                                                              |'
 echo '================================================================================'
 
@@ -123,20 +123,20 @@ set_auto_shutdown()
 
 choose_schedule_script()
 {
-  local files=(schedules/*.wpi)
+  local files=($my_dir/schedules/*.wpi)
   local count=${#files[@]}
   echo "  I can see $count schedule scripts in the \"schedules\" directory:"
   for (( i=0; i<$count; i++ ));
   do
-    echo "  [$(($i+1))] ${files[$i]:10}"
+    echo "  [$(($i+1))] ${files[$i]##*/}"
   done
   read -p "  Which schedule script do you want to use? (1~$count) " index
   if [[ $index =~ [0-9]+ ]] && [ $(($index >= 1)) == '1' ] && [ $(($index <= $count)) == '1' ] ; then
     local script=${files[$((index-1))]};
-    log "  Copying \"${script:10}\" to \"schedule.wpi\"..."
-    cp ${script} schedule.wpi
+    log "  Copying \"${script##*/}\" to \"schedule.wpi\"..."
+    cp ${script} "$my_dir/schedule.wpi"
     log '  Running the script...'
-    . runScript.sh
+    . "$my_dir/runScript.sh"
     log '  Done :-)'
     echo '  Please try not to shutdown your Pi manually, and let me do it for you.'
     echo '  Or at least remember to turn it ON before next scheduled shutdown.'
