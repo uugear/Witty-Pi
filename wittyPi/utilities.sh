@@ -4,6 +4,29 @@
 # This script provides some useful utility functions
 #
 
+is_rtc_connected()
+{
+  local result=$(i2cdetect -y 1)
+  if [[ $result == *"68"* ]] ; then
+    return 0
+  else
+    local result=$((i2cget -y 0x01 0x68 0x0F) 2>/dev/null)
+    if [[ $result =~ ^0x[0-9A-F]{2}$ ]] ; then
+      return 0
+    else
+      load_rtc
+      hwclock &>/dev/null
+      local err=$?
+      unload_rtc
+      if [ $err -eq 0 ] ; then
+        return 0
+      else
+        return 1
+      fi
+    fi
+  fi
+}
+
 load_rtc()
 {
   modprobe rtc-ds1307
@@ -19,7 +42,7 @@ get_rtc_time()
 {
   load_rtc
   LANG=en_GB.UTF-8
-  local rtctime=$(hwclock | awk '{$7=$8="";print $0}');
+  local rtctime=$(hwclock | awk '{$7=$8="";print $0}')
   unload_rtc
   echo $rtctime
 }

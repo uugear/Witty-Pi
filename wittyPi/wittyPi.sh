@@ -14,7 +14,7 @@ echo '==========================================================================
 echo '|                                                                              |'
 echo '|   Witty Pi - Realtime Clock + Power Management for Raspberry A+, B+ and 2    |'
 echo '|                                                                              |'
-echo '|                   < Version 2.11 >     by UUGear s.r.o.                      |'
+echo '|                   < Version 2.12 >     by UUGear s.r.o.                      |'
 echo '|                                                                              |'
 echo '================================================================================'
 
@@ -25,6 +25,13 @@ if [ -z "$my_dir" ] ; then
   exit 1
 fi
 . $my_dir/utilities.sh
+
+if ! is_rtc_connected ; then
+  echo ''
+  log 'Seems Witty Pi is not connected? Quitting...'
+  echo ''
+  exit
+fi
 
 # interactive actions
 set_auto_startup()

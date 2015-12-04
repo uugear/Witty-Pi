@@ -24,13 +24,20 @@ halt_pin=7
 # LED on GPIO-17 (wiringPi pin 0)
 led_pin=0
 
-# disable square wave and enable alarm B
-i2c_write 0x01 0x68 0x0E 0x07
+# if RTC presents
+has_rtc=is_rtc_connected
 
-# clear alarm flags
-byte_F=$(i2c_read 0x01 0x68 0x0F)
-byte_F=$(($byte_F&0xFC))
-i2c_write 0x01 0x68 0x0F $byte_F
+if $has_rtc ; then
+  # disable square wave and enable alarm B
+  i2c_write 0x01 0x68 0x0E 0x07
+
+  # clear alarm flags
+  byte_F=$(i2c_read 0x01 0x68 0x0F)
+  byte_F=$(($byte_F&0xFC))
+  i2c_write 0x01 0x68 0x0F $byte_F
+else
+  log 'Witty Pi is not connected, skipping I2C communications...'
+fi
 
 # delay until GPIO pin state gets stable
 counter=0
@@ -48,21 +55,23 @@ log 'Pending for incoming shutdown command...'
 gpio wfi $halt_pin falling
 log 'Shutdown command is received...'
 
+# light the white LED
+gpio mode $led_pin out
+gpio write $led_pin 1
+
 # restore GPIO-4
 gpio mode $halt_pin in
 gpio mode $halt_pin up
 
-# clear alarm flags
-byte_F=$(i2c_read 0x01 0x68 0x0F)
-byte_F=$(($byte_F&0xFC))
-i2c_write 0x01 0x68 0x0F $byte_F
+if $has_rtc ; then
+  # clear alarm flags
+  byte_F=$(i2c_read 0x01 0x68 0x0F)
+  byte_F=$(($byte_F&0xFC))
+  i2c_write 0x01 0x68 0x0F $byte_F
 
-# only enable alarm A
-i2c_write 0x01 0x68 0x0E 0x05
-
-# light the white LED
-gpio mode $led_pin out
-gpio write $led_pin 1
+  # only enable alarm A
+  i2c_write 0x01 0x68 0x0E 0x05
+fi
 
 log 'Halting all processes and then shutdown Raspberry Pi...'
 
