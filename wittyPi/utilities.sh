@@ -147,19 +147,19 @@ get_local_date_time()
 get_startup_time()
 {
   sec=$(bcd2dec $(i2c_read 0x01 0x68 0x07))
-  if [ $sec == '128' ]; then
+  if [ $sec == '80' ]; then
     sec='??'
   fi
   min=$(bcd2dec $(i2c_read 0x01 0x68 0x08))
-  if [ $min == '128' ]; then
+  if [ $min == '80' ]; then
     min='??'
   fi
   hour=$(bcd2dec $(i2c_read 0x01 0x68 0x09))
-  if [ $hour == '128' ]; then
+  if [ $hour == '80' ]; then
     hour='??'
   fi
   date=$(bcd2dec $(i2c_read 0x01 0x68 0x0A))
-  if [ $date == '128' ]; then
+  if [ $date == '80' ]; then
     date='??'
   fi
   echo "$date $hour:$min:$sec"
@@ -169,25 +169,25 @@ set_startup_time()
 {
   i2c_write 0x01 0x68 0x0E 0x07
   if [ $4 == '??' ]; then
-    sec=$(dec2bcd '128')
+    sec='128'
   else
     sec=$(dec2bcd $4)
   fi
   i2c_write 0x01 0x68 0x07 $sec
   if [ $3 == '??' ]; then
-    min=$(dec2bcd '128')
+    min='128'
   else
     min=$(dec2bcd $3)
   fi
   i2c_write 0x01 0x68 0x08 $min
   if [ $2 == '??' ]; then
-    hour=$(dec2bcd '128')
+    hour='128'
   else
     hour=$(dec2bcd $2)
   fi
   i2c_write 0x01 0x68 0x09 $hour
   if [ $1 == '??' ]; then
-    date=$(dec2bcd '128')
+    date='128'
   else
     date=$(dec2bcd $1)
   fi
@@ -205,15 +205,15 @@ clear_startup_time()
 get_shutdown_time()
 {
   min=$(bcd2dec $(i2c_read 0x01 0x68 0x0B))
-  if [ $min == '128' ]; then
+  if [ $min == '80' ]; then
     min='??'
   fi
   hour=$(bcd2dec $(i2c_read 0x01 0x68 0x0C))
-  if [ $hour == '128' ]; then
+  if [ $hour == '80' ]; then
     hour='??'
   fi
   date=$(bcd2dec $(i2c_read 0x01 0x68 0x0D))
-  if [ $date == '128' ]; then
+  if [ $date == '80' ]; then
     date='??'
   fi
   echo "$date $hour:$min:00"
@@ -223,19 +223,19 @@ set_shutdown_time()
 {
   i2c_write 0x01 0x68 0x0E 0x07
   if [ $3 == '??' ]; then
-    min=$(dec2bcd '128')
+    min='128'
   else
     min=$(dec2bcd $3)
   fi
   i2c_write 0x01 0x68 0x0B $min
   if [ $2 == '??' ]; then
-    hour=$(dec2bcd '128')
+    hour='128'
   else
     hour=$(dec2bcd $2)
   fi
   i2c_write 0x01 0x68 0x0C $hour
   if [ $1 == '??' ]; then
-    date=$(dec2bcd '128')
+    date='128'
   else
     date=$(dec2bcd $1)
   fi
@@ -323,15 +323,15 @@ i2c_read()
     retry=$4
   fi
   local result=$(i2cget -y $1 $2 $3)
-  if [[ $result =~ ^0x[0-9A-F]{2}$ ]] ; then
+  if [[ $result =~ ^0x[0-9a-fA-F]{2}$ ]] ; then
     echo $result;
   else
     retry=$(( $retry + 1 ))
     if [ $retry -eq 4 ] ; then
-      log "I2C read $1 $2 $3 failed, and no more retry."
+      log "I2C read $1 $2 $3 failed (result=$result), and no more retry."
     else
       sleep 1
-      log2file "I2C read $1 $2 $3 failed, retrying $retry ..."
+      log2file "I2C read $1 $2 $3 failed (result=$result), retrying $retry ..."
       i2c_read $1 $2 $3 $retry
     fi
   fi
@@ -348,10 +348,10 @@ i2c_write()
   if [ "$result" != $(dec2hex "$4") ] ; then
     retry=$(( $retry + 1 ))
     if [ $retry -eq 4 ] ; then
-      log "I2C write $1 $2 $3 $4 failed, and no more retry."
+      log "I2C write $1 $2 $3 $4 failed (result=$result), and no more retry."
     else
       sleep 1
-      log2file "I2C write $1 $2 $3 $4 failed, retrying $retry ..."
+      log2file "I2C write $1 $2 $3 $4 failed (result=$result), retrying $retry ..."
       i2c_write $1 $2 $3 $4 $retry
     fi
   fi
