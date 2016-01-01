@@ -16,7 +16,7 @@ cur_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 # utilities
 . "$cur_dir/utilities.sh"
 
-log 'Witty Pi daemon (v2.13) is started.'
+log 'Witty Pi daemon (v2.14) is started.'
 
 # halt by GPIO-4 (wiringPi pin 7)
 halt_pin=7
@@ -41,7 +41,7 @@ fi
 
 # delay until GPIO pin state gets stable
 counter=0
-while [ $counter -lt 5 ]; do
+while [ $counter -lt 10 ]; do
   if [ $(gpio read $halt_pin) == '1' ] ; then
     counter=$(($counter+1))
   else
