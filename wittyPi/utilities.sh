@@ -31,7 +31,7 @@ load_rtc()
 {
   modprobe rtc-ds1307
   local output=$((sh -c 'echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-1/new_device') 2>&1)
-  if [ "sh: echo: I/O error" != "$output" ] ; then
+  if [ ! -z "$output" ] && [ "sh: echo: I/O error" != "$output" ] ; then
     log "$output"
   fi
 }
