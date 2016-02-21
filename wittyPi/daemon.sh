@@ -16,10 +16,14 @@ cur_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 # utilities
 . "$cur_dir/utilities.sh"
 
-log 'Witty Pi daemon (v2.14) is started.'
+log 'Witty Pi daemon (v2.15) is started.'
 
 # halt by GPIO-4 (wiringPi pin 7)
 halt_pin=7
+
+# make sure the halt pin is input with internal pull up
+gpio mode $halt_pin up
+gpio mode $halt_pin in
 
 # LED on GPIO-17 (wiringPi pin 0)
 led_pin=0
@@ -41,7 +45,7 @@ fi
 
 # delay until GPIO pin state gets stable
 counter=0
-while [ $counter -lt 10 ]; do
+while [ $counter -lt 10 ]; do  # increase this value if it needs more time
   if [ $(gpio read $halt_pin) == '1' ] ; then
     counter=$(($counter+1))
   else
@@ -52,7 +56,13 @@ done
 
 # wait for GPIO-4 (wiringPi pin 7) falling, or alarm B
 log 'Pending for incoming shutdown command...'
-gpio wfi $halt_pin falling
+while true; do
+  gpio wfi $halt_pin falling
+  sleep 0.05  # ignore short pull down (increase this value to ignore longer pull down)
+  if [ $(gpio read $halt_pin) == '0' ] ; then
+    break
+  fi
+done
 log 'Shutdown command is received...'
 
 # light the white LED
