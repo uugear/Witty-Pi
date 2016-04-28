@@ -61,6 +61,12 @@ while true; do
   sleep 0.05  # ignore short pull down (increase this value to ignore longer pull down)
   if [ $(gpio read $halt_pin) == '0' ] ; then
     break
+  elif $has_rtc ; then
+    # never ignore alarm B
+    byte_F=$(i2c_read 0x01 0x68 0x0F)
+    if [ $((($byte_F&0x2) != 0)) == '1' ] ; then
+      break
+    fi
   fi
 done
 log 'Shutdown command is received...'
