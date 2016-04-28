@@ -289,7 +289,7 @@ trim()
 current_timestamp()
 {
   load_rtc
-  unset LANG
+  LANG=C
   local rtctime=$(hwclock | awk '{$6=$7="";print $0}');
   unload_rtc
   local rtctimestamp=$(date -d "$rtctime" +%s)
