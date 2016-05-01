@@ -1,7 +1,8 @@
+[ -z $BASH ] && { exec bash "$0" "$@" || exit; }
 #!/bin/bash
 # file: wittyPi.sh
 #
-# This application allows you to configure your Witty Pi
+# Run this application to interactly configure your Witty Pi
 #
 
 # check if sudo is used
@@ -12,9 +13,9 @@ fi
 
 echo '================================================================================'
 echo '|                                                                              |'
-echo '|   Witty Pi - Realtime Clock + Power Management for Raspberry A+, B+ and 2    |'
+echo '|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |'
 echo '|                                                                              |'
-echo '|                   < Version 2.15 >     by UUGear s.r.o.                      |'
+echo '|                   < Version 2.16 >     by UUGear s.r.o.                      |'
 echo '|                                                                              |'
 echo '================================================================================'
 
@@ -26,9 +27,17 @@ if [ -z "$my_dir" ] ; then
 fi
 . $my_dir/utilities.sh
 
+hash gpio 2>/dev/null
+if [ $? -ne 0 ]; then
+  echo ''
+  echo 'Seems your wiringPi is not installed properly (missing "gpio" command). Quitting...'
+  echo ''
+  exit
+fi
+
 if ! is_rtc_connected ; then
   echo ''
-  log 'Seems Witty Pi is not connected? Quitting...'
+  log 'Seems Witty Pi board is not connected? Quitting...'
   echo ''
   exit
 fi
@@ -145,8 +154,8 @@ choose_schedule_script()
     log '  Running the script...'
     . "$my_dir/runScript.sh"
     log '  Done :-)'
-    echo '  Please try not to shutdown your Pi manually, and let me do it for you.'
-    echo '  Or at least remember to turn it ON before next scheduled shutdown.'
+    echo '  Please make sure not to unplug the power supply directly.'
+    echo '  If you want to shutdown, click the button or run "sudo shutdown -h now".'
   else
     echo "  \"$index\" is not a good choice, I need a number from 1 to $count"
   fi
