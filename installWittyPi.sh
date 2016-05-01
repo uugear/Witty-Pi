@@ -1,3 +1,4 @@
+[ -z $BASH ] && { exec bash "$0" "$@" || exit; }
 #!/bin/bash
 # file: installWittyPi.sh
 #
@@ -13,6 +14,9 @@ fi
 
 # target directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/wittyPi"
+
+# error counter
+ERR=0
 
 echo '================================================================================'
 echo '|                                                                              |'
@@ -54,39 +58,55 @@ echo '>>> Install i2c-tools'
 if hash i2cget 2>/dev/null; then
   echo 'Seems i2c-tools is installed already, skip this step.'
 else
-  apt-get install -y i2c-tools
+  apt-get install -y i2c-tools || ((ERR++))
 fi
 
 # install wiringPi
-echo '>>> Install wiringPi'
-if hash gpio 2>/dev/null; then
-  echo 'Seems wiringPi is installed already, skip this step.'
-else
-  git clone git://git.drogon.net/wiringPi
-  cd wiringPi
-  ./build
-  cd ..
+if [ $ERR -eq 0 ]; then
+  echo '>>> Install wiringPi'
+  if hash gpio 2>/dev/null; then
+    echo 'Seems wiringPi is installed already, skip this step.'
+  else
+    if hash git 2>/dev/null; then
+      echo "Git is ready to go..."
+    else
+      echo "Git is missing, install it now..."
+      apt-get install -y git || ((ERR++))
+    fi
+    if [ $ERR -eq 0 ]; then
+      git clone git://git.drogon.net/wiringPi || ((ERR++))
+      cd wiringPi
+      ./build
+      cd ..
+    fi
+  fi
 fi
 
 # install wittyPi
-echo '>>> Install wittyPi'
-if [ -f wittyPi ]; then
-  echo 'Seems wittyPi is installed already, skip this step.'
-else
-  wget http://www.uugear.com/repo/WittyPi/LATEST -O wittyPi.zip
-  unzip wittyPi.zip -d wittyPi
-  cd wittyPi
-  chmod +x wittyPi.sh
-  chmod +x daemon.sh
-  chmod +x syncTime.sh
-  chmod +x runScript.sh
-  sed  -e "s#/home/pi/wittyPi#$DIR#g" init.sh >/etc/init.d/wittypi
-  chmod +x /etc/init.d/wittypi
-  update-rc.d wittypi defaults
-  cd ..
-  sleep 2
-  rm wittyPi.zip
+if [ $ERR -eq 0 ]; then
+  echo '>>> Install wittyPi'
+  if [ -f wittyPi ]; then
+    echo 'Seems wittyPi is installed already, skip this step.'
+  else
+    wget http://www.uugear.com/repo/WittyPi/LATEST -O wittyPi.zip || ((ERR++))
+    unzip wittyPi.zip -d wittyPi || ((ERR++))
+    cd wittyPi
+    chmod +x wittyPi.sh
+    chmod +x daemon.sh
+    chmod +x syncTime.sh
+    chmod +x runScript.sh
+    sed -e "s#/home/pi/wittyPi#$DIR#g" init.sh >/etc/init.d/wittypi
+    chmod +x /etc/init.d/wittypi
+    update-rc.d wittypi defaults
+    cd ..
+    sleep 2
+    rm wittyPi.zip
+  fi
 fi
 
 echo
-echo '>>> All done. Please reboot your Pi :-)'
+if [ $ERR -eq 0 ]; then
+  echo '>>> All done. Please reboot your Pi :-)'
+else
+  echo '>>> Something went wrong. Please check the messages above :-('
+fi
