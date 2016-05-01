@@ -46,6 +46,11 @@ if grep -q 'dtparam=i2c_arm=on' /boot/config.txt; then
 else
   echo 'dtparam=i2c_arm=on' >> /boot/config.txt
 fi
+if grep -q 'dtoverlay=pi3-miniuart-bt' /boot/config.txt; then
+  echo 'Seems setting Pi3 Bluetooth to use mini-UART is done already, skip this step.'
+else
+  echo 'dtoverlay=pi3-miniuart-bt' >> /boot/config.txt
+fi
 if [ -f /etc/modprobe.d/raspi-blacklist.conf ]; then
   sed -i 's/^blacklist spi-bcm2708/#blacklist spi-bcm2708/' /etc/modprobe.d/raspi-blacklist.conf
   sed -i 's/^blacklist i2c-bcm2708/#blacklist i2c-bcm2708/' /etc/modprobe.d/raspi-blacklist.conf
