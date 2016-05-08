@@ -28,3 +28,8 @@ the state is define by putting D?, H?, M? and S? parameter after the state
 type (ON/OFF), while D as Days, H as Hours, M as Minutes, S as Seconds and ? 
 is a number. For example, "D1 H2 M3 S10" means 1 day 2 hours 3 minutes and 10 
 seconds, while "H5 M2" means 5 hours and 2 minutes.
+
+  An ON state will be ended by a scheduled shutdown, while an OFF state will be
+end by a scheduled startup. If you want to skip any shutdown/startup, just append
+"WAIT" at the end of the state, and make sure your program will shutdown your
+Raspberry Pi after finishing its job.
