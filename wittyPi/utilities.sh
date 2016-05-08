@@ -11,7 +11,7 @@ is_rtc_connected()
     return 0
   else
     local result=$((i2cget -y 0x01 0x68 0x0F) 2>/dev/null)
-    if [[ $result =~ ^0x[0-9A-F]{2}$ ]] ; then
+    if [[ $result =~ ^0x[0-9A-Fa-f]{2}$ ]] ; then
       return 0
     else
       load_rtc
