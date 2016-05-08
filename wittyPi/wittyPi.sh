@@ -152,7 +152,7 @@ choose_schedule_script()
     log "  Copying \"${script##*/}\" to \"schedule.wpi\"..."
     cp ${script} "$my_dir/schedule.wpi"
     log '  Running the script...'
-    . "$my_dir/runScript.sh"
+    . "$my_dir/runScript.sh" | tee -a "$my_dir/schedule.log"
     log '  Done :-)'
     echo '  Please make sure not to unplug the power supply directly.'
     echo '  If you want to shutdown, click the button or run "sudo shutdown -h now".'
