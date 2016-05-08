@@ -139,9 +139,17 @@ if [ -f $schedule_file ]; then
         if [ $((check_time >= cur_time)) == '1' ] && ([ $found_states == 1 ] || [[ ${states[$index]} == ON* ]]) ; then
           found_states=$((found_states+1))
           if [[ ${states[$index]} == ON* ]]; then
-            setup_on_state $check_time
+            if [[ ${states[$index]} == *WAIT ]]; then
+              log 'Skip scheduling next shutdown, which should be done externally.'
+            else
+              setup_on_state $check_time
+            fi
           elif [[ ${states[$index]} == OFF* ]] ; then
-            setup_off_state $check_time
+            if [[ ${states[$index]} == *WAIT ]]; then
+              log 'Skip scheduling next startup, which should be done externally.'
+            else
+              setup_off_state $check_time
+            fi
           else
             log "I can not recognize this state: ${states[$index]}"
           fi
