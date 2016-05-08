@@ -115,9 +115,8 @@ if [ -f $schedule_file ]; then
     log 'I can not find any state defined in the script.'
   else
     if [ $((cur_time < begin)) == '1' ] ; then
-      cur_time=$begin
-    fi
-    if [ $((cur_time >= end)) == '1' ] ; then
+      log 'The schedule script has not beginned yet.'
+    elif [ $((cur_time >= end)) == '1' ] ; then
       log 'The schedule script has ended already.'
     else
       index=0
