@@ -19,7 +19,7 @@ case "$1" in
 	daemonPid=$(ps --ppid $! -o pid=)
 	echo $daemonPid > /var/run/wittypi_daemon.pid
 	sudo /home/pi/wittyPi/runScript.sh >> /home/pi/wittyPi/schedule.log &
-	sudo /home/pi/wittyPi/syncTime.sh 60 &
+	sudo /home/pi/wittyPi/syncTime.sh 5 &
         ;;
     stop)
         echo "Stopping Witty Pi Daemon..."

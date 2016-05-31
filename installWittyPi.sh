@@ -51,6 +51,11 @@ if grep -q 'dtoverlay=pi3-miniuart-bt' /boot/config.txt; then
 else
   echo 'dtoverlay=pi3-miniuart-bt' >> /boot/config.txt
 fi
+if grep -q 'core_freq=250' /boot/config.txt; then
+  echo 'Seems the frequency of GPU processor core is set to 250MHz already, skip this step.'
+else
+  echo 'core_freq=250' >> /boot/config.txt
+fi
 if [ -f /etc/modprobe.d/raspi-blacklist.conf ]; then
   sed -i 's/^blacklist spi-bcm2708/#blacklist spi-bcm2708/' /etc/modprobe.d/raspi-blacklist.conf
   sed -i 's/^blacklist i2c-bcm2708/#blacklist i2c-bcm2708/' /etc/modprobe.d/raspi-blacklist.conf

@@ -4,6 +4,24 @@
 # This script provides some useful utility functions
 #
 
+has_internet()
+{
+  nc -z -w 5 8.8.8.8 53  >/dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+force_ntp_update()
+{
+  log 'Pushing NTP to update system time...'
+  /etc/init.d/ntp stop
+  ntpd -q -g
+  /etc/init.d/ntp start
+}
+
 is_rtc_connected()
 {
   local result=$(i2cdetect -y 1)
