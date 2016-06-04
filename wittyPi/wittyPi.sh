@@ -15,7 +15,7 @@ echo '==========================================================================
 echo '|                                                                              |'
 echo '|   Witty Pi - Realtime Clock + Power Management for Raspberry Pi              |'
 echo '|                                                                              |'
-echo '|                   < Version 2.18 >     by UUGear s.r.o.                      |'
+echo '|                   < Version 2.181 >     by UUGear s.r.o.                      |'
 echo '|                                                                              |'
 echo '================================================================================'
 
@@ -155,6 +155,7 @@ choose_schedule_script()
     . "$my_dir/runScript.sh" | tee -a "$my_dir/schedule.log"
     log '  Done :-)'
     echo '  Please make sure not to unplug the power supply directly.'
+    echo '  Please do not call "sudo shutdown -h now" command directly.'
     echo '  If you want to shutdown, please tap the button on Witty Pi.'
   else
     echo "  \"$index\" is not a good choice, I need a number from 1 to $count"
