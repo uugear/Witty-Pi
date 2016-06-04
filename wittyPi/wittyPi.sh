@@ -155,7 +155,7 @@ choose_schedule_script()
     . "$my_dir/runScript.sh" | tee -a "$my_dir/schedule.log"
     log '  Done :-)'
     echo '  Please make sure not to unplug the power supply directly.'
-    echo '  If you want to shutdown, click the button or run "sudo shutdown -h now".'
+    echo '  If you want to shutdown, please tap the button on Witty Pi.'
   else
     echo "  \"$index\" is not a good choice, I need a number from 1 to $count"
   fi
