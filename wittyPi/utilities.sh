@@ -59,13 +59,28 @@ unload_rtc()
   rmmod rtc-ds1307
 }
 
-get_rtc_time()
+get_rtc_timestamp()
 {
   load_rtc
-  LANG=en_GB.UTF-8
-  local rtctime=$(hwclock | awk '{$7=$8="";print $0}')
+  LANG=C
+  local rtctime=$(hwclock | awk '{$6=$7="";print $0}');
   unload_rtc
-  echo $rtctime
+  if [ "$rtctime" == "" ] ; then
+    echo ''
+  else
+    local rtctimestamp=$(date -d "$rtctime" +%s)
+    echo $rtctimestamp
+  fi
+}
+
+get_rtc_time()
+{
+  local rtc_ts=$(get_rtc_timestamp)
+  if [ "$rtc_ts" == "" ] ; then
+    echo 'N/A'
+  else
+    echo $(date +'%a %d %b %Y %H:%M:%S %Z' -d @$rtc_ts)
+  fi
 }
 
 bcd2dec()
@@ -306,11 +321,7 @@ trim()
 
 current_timestamp()
 {
-  load_rtc
-  LANG=C
-  local rtctime=$(hwclock | awk '{$6=$7="";print $0}');
-  unload_rtc
-  local rtctimestamp=$(date -d "$rtctime" +%s)
+  local rtctimestamp=$(get_rtc_timestamp)
   if [ "$rtctimestamp" == "" ] ; then
     echo $(date +%s)
   else

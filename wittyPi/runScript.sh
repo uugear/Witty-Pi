@@ -23,6 +23,11 @@ schedule_file="$cur_dir/schedule.wpi"
 # utilities
 . "$cur_dir/utilities.sh"
 
+# pending until system time gets initialized
+while [[ "$(date +%Y)" == *"1970"* ]]; do
+  sleep 1
+done
+
 # get current timestamp
 cur_time=$(current_timestamp)
 echo "--------------- $(date -d @$cur_time +'%Y-%m-%d %H:%M:%S') ---------------"
