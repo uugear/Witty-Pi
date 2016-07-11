@@ -118,7 +118,13 @@ get_utc_date_time()
   if [ $second == '??' ]; then
     second='00'
   fi
-  local datestr=$(date +%Y-%m-)
+  local datestr=$(date +%Y-)
+  local curDate=$(date +%d)
+  if [[ "$date" < "$curDate" ]] ; then
+    datestr+=$(date --date="$(date +%m) +1 month" +%m-)
+  else
+    datestr+=$(date +%m-)
+  fi
   datestr+="$date $hour:$minute:$second"
   datestr+=$(date +%:z)
   local result=$(date -u -d "$datestr" +"%d %H:%M:%S" 2>/dev/null)
