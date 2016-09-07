@@ -1,0 +1,1523 @@
+# Turn on Raspberry Pi at 7:00 AM on every working day + saturday, for 1 minutes every 10 min until 21h00
+
+BEGIN	2016-08-15 07:00:00		# Aug 15th, 2016 is a Monday
+END		2017-07-31 23:59:59
+# -- MONDAY --
+# -- 07:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:10 --
+ON 		M1 WAIT			      # keep ON state for 1 minute 
+OFF 	M9				        # keep OFF state for 9 minutes
+# -- 18:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     H10 M9         	# keep OFF state for 10 hours and 9 minutes
+# -- Tuesday --
+# -- 07:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:10 --
+ON 		M1 WAIT		        # keep ON state for 1 minute 
+OFF 	M9				        # keep OFF state for 9 minutes
+# -- 18:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     H10 M9         	# keep OFF state for 10 hours and 9 minutes
+# -- Wednesday --
+# -- 07:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:10 --
+ON 		M1 WAIT			      # keep ON state for 1 minute 
+OFF 	M9				        # keep OFF state for 9 minutes
+# -- 18:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     H10 M9         	# keep OFF state for 10 hours and 9 minutes
+# -- Thursday --
+# -- 07:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:10 --
+ON 		M1 WAIT			      # keep ON state for 1 minute 
+OFF 	M9				        # keep OFF state for 9 minutes
+# -- 18:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     H10 M9         	# keep OFF state for 10 hours and 9 minutes
+# -- Friday --
+# -- 07:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:10 --
+ON 		M1 WAIT			      # keep ON state for 1 minute 
+OFF 	M9				        # keep OFF state for 9 minutes
+# -- 18:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     H10 M9         	# keep OFF state for 10 hours and 9 minutes
+# -- Saturday --
+# -- 07:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 07:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 08:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 09:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 10:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 11:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 12:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 13:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 14:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 15:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 16:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 17:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:10 --
+ON 		M1 WAIT			      # keep ON state for 1 minute 
+OFF 	M9				        # keep OFF state for 9 minutes
+# -- 18:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 18:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 19:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:00 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:10 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:20 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:30 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:40 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     M9              # keep OFF state for 9 minutes
+# -- 20:50 --
+ON      M1 WAIT         # keep ON state for 1 minute
+OFF     D1 H10 M9     	# keep OFF state for 1 day 10 hours and 9 minutes
+
