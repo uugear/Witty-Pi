@@ -95,7 +95,7 @@ fi
 # install wittyPi
 if [ $ERR -eq 0 ]; then
   echo '>>> Install wittyPi'
-  if [ -f wittyPi ]; then
+  if [ -d wittyPi ]; then
     echo 'Seems wittyPi is installed already, skip this step.'
   else
     wget http://www.uugear.com/repo/WittyPi/LATEST -O wittyPi.zip || ((ERR++))
