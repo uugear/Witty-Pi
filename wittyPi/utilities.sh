@@ -301,7 +301,7 @@ system_to_rtc()
 {
   log '  Writing system time to RTC...'
   load_rtc
-  local err=$((hwclock -w) 2>&1)
+  local err=$((hwclock -wu) 2>&1)
   if [ "$err" == "" ] ; then
     log '  Done :-)'
   else
@@ -315,7 +315,7 @@ rtc_to_system()
 {
   log '  Writing RTC time to system...'
   load_rtc
-  local err=$((hwclock -s) 2>&1)
+  local err=$((hwclock -su) 2>&1)
   if [ "$err" == "" ] ; then
     log '  Done :-)'
   else
