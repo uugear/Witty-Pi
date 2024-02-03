@@ -80,7 +80,8 @@ set_auto_startup()
         when="$date $hour:$minute:$second"
         echo "  ...not supported pattern, but I can do \"$when\" for you..."
       fi
-      log "  Seting startup time to \"$when\""
+      reset_startup_time
+      log "  Setting startup time to \"$when\""
       when=$(get_utc_date_time $date $hour $minute $second)
       IFS=' ' read -r date timestr <<< "$when"
       IFS=':' read -r hour minute second <<< "$timestr"
@@ -125,7 +126,8 @@ set_auto_shutdown()
         when="$date $hour:$minute"
         echo "  ...not supported pattern, but I can do \"$when\" for you..."
       fi
-      log "  Seting shutdown time to \"$when\""
+      reset_shutdown_time
+      log "  Setting shutdown time to \"$when\""
       when=$(get_utc_date_time $date $hour $minute '00')
       IFS=' ' read -r date timestr <<< "$when"
       IFS=':' read -r hour minute second <<< "$timestr"
